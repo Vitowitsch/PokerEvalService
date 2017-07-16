@@ -1,12 +1,19 @@
 package com.sanvito;
 
+import org.junit.Before;
 import org.junit.Test;
+
+import com.sanvito.pokereval.config.SpringConfig;
 
 public class CallCalculatorTest {
 
+	@Before
+	public void init() {
+		SpringConfig c = new SpringConfig();
+	}
+
 	@Test
 	public void test() {
-		System.setProperty("java.library.path", "D:/git/StatisticService/src/main/resources/dll");
 		String board = "";
 		String dead = "";
 		String hands = "4hqd5h6h:js9h8h2h";

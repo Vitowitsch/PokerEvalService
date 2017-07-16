@@ -27,12 +27,10 @@ import org.bridj.Pointer;
 
 public class Calculator {
 
-	public static Results calc(String hands, String board, String dead,
-			int iters) {
+	public static Results calc(String hands, String board, String dead, int iters) {
 		Pointer<Pbots_calcResults> res = Pbots_calcLibrary.alloc_results();
 		Results results = null;
-		if (Pbots_calcLibrary.calc(Pointer.pointerToCString(hands),
-				Pointer.pointerToCString(board),
+		if (Pbots_calcLibrary.calc(Pointer.pointerToCString(hands), Pointer.pointerToCString(board),
 				Pointer.pointerToCString(dead), iters, res) > 0) {
 			results = new Results(res.get());
 		}
